@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors,prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
-  int _selectedIndex = 4;
+
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
@@ -21,409 +21,211 @@ class _ProfilePageState extends State<ProfilePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: Colors.black,
-          height: double.infinity,
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(vertical: 15 , horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Container(
+      color: Colors.black,
+      height: double.infinity,
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Icon(Icons.lock_outline, size: 30),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "dhairyajoshi_",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),  
-                      SizedBox(width: 5,),
-                      CircleAvatar( 
-                        radius: 10,
-                        backgroundColor: Colors.transparent,
-                        foregroundImage: NetworkImage('https://pngset.com/images/instagram-verified-badge-image-mart-instagram-verified-badge-stencil-gear-machine-transparent-png-2504861.png'),
-                      ),
-                      Icon(
-                        Icons.arrow_drop_down_outlined,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.add_box_outlined, size: 35),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Icon(
-                        Icons.menu_outlined,
-                        size: 35,
-                      )
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              // Container( 
-              //   height: 100,
-              //   child: ListView( 
-              //     shrinkWrap: true,
-              //   children: [
-              //     Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-              //         CircleAvatar(
-              //           radius: 45,
-              //           foregroundImage:
-              //               NetworkImage('https://dhairya.games/pfp.jpg'),
-              //         ),
-              //         Column(
-              //           children: [
-              //             Text('0',
-              //                 style: TextStyle(
-              //                     fontWeight: FontWeight.bold, fontSize: 18)),
-              //             Text(
-              //               'Posts',
-              //               style: TextStyle(fontSize: 15),
-              //             )
-              //           ],
-              //         ),
-              //         Column(
-              //           children: [
-              //             Text('138',
-              //                 style: TextStyle(
-              //                     fontWeight: FontWeight.bold, fontSize: 18)),
-              //             Text(
-              //               'Followers',
-              //               style: TextStyle(fontSize: 15),
-              //             )
-              //           ],
-              //         ),
-              //         Column(
-              //           children: [
-              //             Text('170',
-              //                 style: TextStyle(
-              //                     fontWeight: FontWeight.bold, fontSize: 18)),
-              //             Text(
-              //               'Following',
-              //               style: TextStyle(fontSize: 15),
-              //             )
-              //           ],
-              //         ),
-              //       ],
-              //     ),
-              //     SizedBox(
-              //       height: 5,
-              //     ),
-              //     Text(
-              //       "Dhairya Joshi",
-              //       style:
-              //           TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-              //     ),
-              //     SizedBox(
-              //       height: 2,
-              //     ),
-              //     Text(
-              //       "बदमोश/बदमोशी",
-              //       style: TextStyle(fontSize: 14),
-              //     ),
-              //     SizedBox(
-              //       height: 2,
-              //     ),
-              //     Text(
-              //       "स्लिम शेडी",
-              //       style: TextStyle(fontSize: 14),
-              //     ),
-              //     Row(
-              //       children: [
-              //         Expanded(
-              //             flex: 9,
-              //             child: OutlinedButton(
-              //               style: OutlinedButton.styleFrom(
-              //                 side: BorderSide(color: Colors.white),
-              //               ),
-              //               child: Text(
-              //                 'Edit Profile',
-              //                 style: TextStyle(color: Colors.white),
-              //               ),
-              //               onPressed: editProfile,
-              //             )),
-              //         SizedBox(
-              //           width: 5,
-              //         ),
-              //         Expanded(
-              //           child: IconButton(
-              //             icon: Icon(
-              //               Icons.person_add_outlined,
-              //               color: Colors.white,
-              //             ),
-              //             onPressed: addPeople,
-              //           ),
-              //         )
-              //       ],
-              //     ),
-              //     SizedBox(
-              //       height: 5,
-              //     ),
-              //     Column(
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         Text(
-              //           'Story Highlights',
-              //           style: TextStyle(
-              //               fontWeight: FontWeight.bold, fontSize: 15),
-              //         ),
-              //         SizedBox(
-              //           height: 3,
-              //         ),
-              //         Text('Keep your favourite stories on your profile',
-              //             style: TextStyle(fontSize: 13))
-              //       ],
-              //     ),
-              //     SizedBox(
-              //       height: 5,
-              //     ),
-              //     Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //       children: [
-              //         Column(
-              //           children: [
-              //             Icon(
-              //               Icons.add_circle_outline_sharp,
-              //               size: 65,
-              //             ),
-              //             Text('New')
-              //           ],
-              //         ),
-              //         StoryItem(),
-              //         StoryItem(),
-              //         StoryItem(),
-              //         StoryItem(),
-              //       ],
-              //     ),
-              //     SizedBox(
-              //       height: 15,
-              //     ),
-              //     TabBar(
-              //       controller: _tabController,
-              //       indicatorSize: TabBarIndicatorSize.tab,
-              //       tabs: [
-              //         Tab(icon: Icon(Icons.grid_view_outlined)),
-              //         Tab(icon: Icon(Icons.assignment_ind_outlined)),
-              //       ],
-              //     ),
-              //     Expanded(
-              //       child: TabBarView(
-              //         controller: _tabController,
-              //         children: [
-              //           PhotoGrid(),
-              //           PhotoGrid(),
-              //         ],
-              //       ),
-              //     ),
-              //   ],
-              //   ),
-              // )
-          
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(
-                    radius: 45,
-                    foregroundImage:
-                        NetworkImage('https://dhairya.games/pfp.jpg'),
-                  ),
-                  Column(
-                    children: [
-                      Text('11', 
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18)),
-                      Text(
-                        'Posts',
-                        style: TextStyle(fontSize: 15),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('138',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18)),
-                      Text(
-                        'Followers',
-                        style: TextStyle(fontSize: 15),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('170',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18)),
-                      Text(
-                        'Following',
-                        style: TextStyle(fontSize: 15),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                "Dhairya Joshi",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Text(
-                "बदमोश/बदमोशी",
-                style: TextStyle(fontSize: 14),
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Text(
-                "स्लिम शेडी",
-                style: TextStyle(fontSize: 14),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                      flex: 9,
-                      child: OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: Colors.white),
-                        ),
-                        child: Text(
-                          'Edit Profile',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        onPressed: editProfile,
-                      )),
+                  Icon(Icons.lock_outline, size: 30),
                   SizedBox(
                     width: 5,
                   ),
-                  Expanded(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.person_add_outlined,
-                        color: Colors.white,
-                      ),
-                      onPressed: addPeople,
-                    ),
+                  Text(
+                    "dhairyajoshi_",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Colors.transparent,
+                    foregroundImage: NetworkImage(
+                        'https://pngset.com/images/instagram-verified-badge-image-mart-instagram-verified-badge-stencil-gear-machine-transparent-png-2504861.png'),
+                  ),
+                  Icon(
+                    Icons.arrow_drop_down_outlined,
+                    color: Colors.grey,
                   )
                 ],
               ),
-              SizedBox(
-                height: 5,
+              Row(
+                children: [
+                  Icon(Icons.add_box_outlined, size: 35),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Icon(
+                    Icons.menu_outlined,
+                    size: 35,
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                radius: 45,
+                foregroundImage: NetworkImage('https://dhairya.games/pfp.jpg'),
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text('11',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                   Text(
-                    'Story Highlights',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text('Keep your favourite stories on your profile',
-                      style: TextStyle(fontSize: 13))
+                    'Posts',
+                    style: TextStyle(fontSize: 15),
+                  )
                 ],
               ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Column(
                 children: [
-                  Column(
-                    children: [
-                      Icon(
-                        Icons.add_circle_outline_sharp,
-                        size: 65,
-                      ),
-                      Text('New')
-                    ],
-                  ),
-                  StoryItem(),
-                  StoryItem(),
-                  StoryItem(),
-                  StoryItem(),
+                  Text('138',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text(
+                    'Followers',
+                    style: TextStyle(fontSize: 15),
+                  )
                 ],
               ),
-              SizedBox(
-                height: 15,
-              ),
-              TabBar(
-                controller: _tabController,
-                indicatorSize: TabBarIndicatorSize.tab,
-                indicatorColor: Colors.white,
-                tabs: [
-                  Tab(icon: Icon(Icons.grid_view_outlined)),
-                  Tab(icon: Icon(Icons.assignment_ind_outlined)),
+              Column(
+                children: [
+                  Text('170',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text(
+                    'Following',
+                    style: TextStyle(fontSize: 15),
+                  )
                 ],
-              ),
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    PhotoGrid(),
-                    PhotoGrid(),
-                  ],
-                ),
               ),
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-            backgroundColor: Colors.black,
+          SizedBox(
+            height: 5,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: '',
-            backgroundColor: Colors.black,
+          Text(
+            "Dhairya Joshi",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera_alt),
-            label: '',
-            backgroundColor: Colors.black,
+          SizedBox(
+            height: 2,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: '',
-            backgroundColor: Colors.black,
+          Text(
+            "बदमोश/बदमोशी",
+            style: TextStyle(fontSize: 14),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-            backgroundColor: Colors.black,
+          SizedBox(
+            height: 2,
+          ),
+          Text(
+            "स्लिम शेडी",
+            style: TextStyle(fontSize: 14),
+          ),
+          Row(
+            children: [
+              Expanded(
+                  flex: 9,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.white),
+                    ),
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: editProfile,
+                  )),
+              SizedBox(
+                width: 5,
+              ),
+              Expanded(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.person_add_outlined,
+                    color: Colors.white,
+                  ),
+                  onPressed: addPeople,
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Story Highlights',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              Text('Keep your favourite stories on your profile',
+                  style: TextStyle(fontSize: 13))
+            ],
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                // ignore:
+                children: [
+                  Icon(
+                    Icons.add_circle_outline_sharp,
+                    size: 65,
+                  ),
+                  Text('New')
+                ],
+              ),
+              StoryItem(),
+              StoryItem(),
+              StoryItem(),
+              StoryItem(),
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          TabBar(
+            controller: _tabController,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorColor: Colors.white,
+            tabs: [
+              Tab(icon: Icon(Icons.grid_view_outlined)),
+              Tab(icon: Icon(Icons.assignment_ind_outlined)),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                PhotoGrid(),
+                PhotoGrid(),
+              ],
+            ),
           ),
         ],
-        currentIndex: _selectedIndex,
-        unselectedItemColor: Colors.white,
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
       ),
     );
   }

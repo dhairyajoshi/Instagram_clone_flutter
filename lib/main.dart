@@ -1,4 +1,4 @@
-import 'package:big_mosquito_flutter/screens/profile_page.dart';
+import 'package:big_mosquito_flutter/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: ProfilePage(),
+      home: Wrapper(),
       
     );
   }
