@@ -24,7 +24,6 @@ class DatabaseService{
         urlList.add(photos[i]['urls']['small']);
       } 
     }
-    print('${urlList.length}');
     return urlList;
   }
 }

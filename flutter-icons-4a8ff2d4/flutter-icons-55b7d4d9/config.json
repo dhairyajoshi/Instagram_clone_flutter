@@ -19,6 +19,12 @@
       "search": [
         "instagram-reel"
       ]
+    },
+    {
+      "uid": "4283eb9b8a2b741092e7e3e6c8943dae",
+      "css": "facebook_messenger",
+      "code": 62367,
+      "src": "fontawesome5"
     }
   ]
 }

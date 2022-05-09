@@ -12,6 +12,10 @@
 ///       - asset: fonts/CustomIcons.ttf
 ///
 /// 
+/// * Font Awesome 5, Copyright (C) 2016 by Dave Gandy
+///         Author:    Dave Gandy
+///         License:   SIL (https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt)
+///         Homepage:  http://fortawesome.github.com/Font-Awesome/
 ///
 import 'package:flutter/widgets.dart';
 
@@ -22,4 +26,5 @@ class CustomIcons {
   static const String? _kFontPkg = null;
 
   static const IconData instagram_reel = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData facebook_messenger = IconData(0xf39f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
