@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:big_mosquito_flutter/Services/database_services.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -25,7 +27,7 @@ class ExploreLoadingState extends AppState{}
 class HomeLoadingState extends AppState{}
 
 class HomeLoadedState extends AppState{
-  List<String> _posts;
+  final List<String> _posts;
 
   HomeLoadedState(this._posts);
 
@@ -33,7 +35,7 @@ class HomeLoadedState extends AppState{
 }
 
 class ExploreLoadedState extends AppState{
-  List<String> _posts;
+  final List<String> _posts;
 
   ExploreLoadedState(this._posts);
 
@@ -41,7 +43,7 @@ class ExploreLoadedState extends AppState{
 }
 
 class PostLoadedState extends AppState {
-  List<String> _posts;
+  final List<String> _posts;
 
   PostLoadedState(this._posts);
 
@@ -55,7 +57,7 @@ class AppEvent extends Equatable {
 }
 
 class ChangeScreenEvent extends AppEvent {
-  int _screen;
+  final int _screen;
 
   ChangeScreenEvent(this._screen);
 
