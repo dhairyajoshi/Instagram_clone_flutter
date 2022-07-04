@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:big_mosquito_flutter/AppBlock.dart';
 import 'package:big_mosquito_flutter/Services/database_services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -80,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage>
           children: [
             CircleAvatar(
               radius: 45,
-              foregroundImage: NetworkImage('https://dhairya.games/pfp.jpg'),
+              foregroundImage: NetworkImage('https://avatars.githubusercontent.com/u/46091892?v=4'),
             ),
             Column(
               children: [
@@ -128,14 +130,14 @@ class _ProfilePageState extends State<ProfilePage>
           height: 2,
         ),
         Text(
-          "बदमोश/बदमोशी",
+          "hello there 👋",
           style: TextStyle(fontSize: 14),
         ),
         SizedBox(
           height: 2,
         ),
         Text(
-          "स्लिम शेडी",
+          "I am an app developer",
           style: TextStyle(fontSize: 14),
         ),
         Row(
@@ -262,30 +264,31 @@ class PhotoGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: DatabaseService().getPhotos(),
-      builder: (context,AsyncSnapshot snap){
-        if(snap.hasData)
-        {
-          
-          return GridView.builder(
-            itemCount: snap.data.length,
-            shrinkWrap: true,
-            cacheExtent: 50, 
-            scrollDirection: Axis.vertical,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 2,
-              crossAxisSpacing: 2,
-              childAspectRatio: 1/1,
-              crossAxisCount: 3),
-            itemBuilder: (context,index){
-              return Image.network(snap.data[index],fit: BoxFit.fill,);
-            },
-          );
-        }
 
+    return BlocBuilder<ProfilePageBloc,AppState>(
+      bloc: ProfilePageBloc()..add(FetchPostEvent()),
+      builder: (context,state){
+        if(state is PostLoadingState){
+          return Center(child: CircularProgressIndicator(),);
+        }
+        if(state is PostLoadedState){
+          return GridView.builder(
+            itemCount: state.posts.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: 1/1,
+              mainAxisSpacing: 2,
+              crossAxisSpacing: 2
+            ),
+            itemBuilder: (context,index){
+              return Image.network(state.posts[index]);
+            },
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+           );
+        }
         return Center(child: CircularProgressIndicator(),);
-      },
+      } ,
     );
   }
 }
