@@ -1,0 +1,72 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:4146890685991255274",
+      "lastPropertyId": "9:8554967565463721754",
+      "name": "UserModel",
+      "properties": [
+        {
+          "id": "1:621303513850851979",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:531393416434534525",
+          "name": "username",
+          "type": 9
+        },
+        {
+          "id": "3:1453608147947408640",
+          "name": "first_name",
+          "type": 9
+        },
+        {
+          "id": "4:8166502557979000583",
+          "name": "bio",
+          "type": 9
+        },
+        {
+          "id": "5:4046411132992302739",
+          "name": "pfp",
+          "type": 9
+        },
+        {
+          "id": "6:8412441271039992637",
+          "name": "cpf",
+          "type": 9
+        },
+        {
+          "id": "7:8368455586272055188",
+          "name": "posts",
+          "type": 6
+        },
+        {
+          "id": "8:4597774695684918062",
+          "name": "likes",
+          "type": 6
+        },
+        {
+          "id": "9:8554967565463721754",
+          "name": "is_staff",
+          "type": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:4146890685991255274",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

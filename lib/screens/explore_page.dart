@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:big_mosquito_flutter/AppBlock.dart';
+import 'package:big_mosquito_flutter/bloc/AppBlock.dart';
 import 'package:big_mosquito_flutter/Services/database_services.dart';
+import 'package:big_mosquito_flutter/bloc/explore_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

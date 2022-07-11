@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors,prefer_const_literals_to_create_immutables
-import 'package:big_mosquito_flutter/AppBlock.dart';
+import 'package:big_mosquito_flutter/bloc/AppBlock.dart';
 import 'package:bloc/bloc.dart';
 import 'package:big_mosquito_flutter/custom_icons_icons.dart';
 import 'package:big_mosquito_flutter/screens/explore_page.dart';
