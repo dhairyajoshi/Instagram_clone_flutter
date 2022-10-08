@@ -135,6 +135,7 @@ class HomePage extends StatelessWidget {
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: state.posts.length,
+                          
                           itemBuilder: (context, index) {
                             return FeedPost(post: state.posts[index]);
                           },

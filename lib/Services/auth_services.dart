@@ -9,7 +9,7 @@ import 'package:objectbox/objectbox.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 class AuthServices{
-  String baseUrl='https://apps-ourspace.herokuapp.com';
+  String baseUrl='https://insta-clone-dj.herokuapp.com';
   
  
 
@@ -41,15 +41,18 @@ class AuthServices{
 
     final jsondata=json.decode(response.body);
 
-    final user = UserModel.fromJson(jsondata['user']);
+    print(jsondata); 
 
-    LocalDatabase().putUser(user);
 
-    if(jsondata['msg']=='success'){
-      final pref = await SharedPreferences.getInstance();
-      await pref.setString('token', jsondata['token']);
-      return true;
-    }
+    // if(jsondata['msg']=='logged in successfully'){
+    // final user = UserModel.fromJson(jsondata['user']);
+
+    // LocalDatabase().putUser(user);
+
+    //   final pref = await SharedPreferences.getInstance();
+    //   await pref.setString('token', jsondata['token']);
+    //   return true;
+    // }
     return false;
   }
 }
